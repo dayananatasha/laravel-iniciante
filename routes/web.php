@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,26 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/cliente', function (){
+    $csrfToken=csrf_token();
+    $html = <<<HTML
+<html>
+<body>
+    <h1>Cliente</h1>
+    <form method="post" action="/cliente/cadastrar">
+        <input type="hidden" name="_token" value="$csrfToken">
+        <input type="text" name="name"/>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
+HTML;
+    return $html;
+});
+
+Route::post('cliente/cadastrar', function (Request $request){
+    echo $request->get('name');
+    echo $request->name;
 });
