@@ -18,24 +18,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/cliente', function (){
-    $csrfToken=csrf_token();
-    $html = <<<HTML
-<html>
-<body>
-    <h1>Cliente</h1>
-    <form method="post" action="/cliente/cadastrar">
-        <input type="hidden" name="_token" value="$csrfToken">
-        <input type="text" name="name"/>
-        <button type="submit">Enviar</button>
-    </form>
-</body>
-</html>
-HTML;
-    return $html;
-});
+Route::get('cliente/cadastrar', function(){
+    $nome = 'Luiz Carlos';
+    $variavel = 'valor';
+    /*return view('cadastrar',[
+        'nome' => 'Luiz Carlos',
+        'variavel' => 'valor1'
+    ]);*/
+    /*return view('cadastrar', compact('nome', 'variavel'));*/
+    return view('cliente.cadastrar')
+        ->with('nome', $nome)
+        ->with('variavel', $variavel);
 
-Route::post('cliente/cadastrar', function (Request $request){
-    echo $request->get('name');
-    echo $request->name;
+
 });
