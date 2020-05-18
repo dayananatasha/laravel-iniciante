@@ -18,11 +18,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/blade', function (){
+    $nome = 'Dayana Natasha';
+    $variavel = 'valor';
+    return view('test')
+        ->with('nome', $nome)
+        ->with('variavel', $variavel)
+        ->with('test', 'Tenho valor');/*DUVIDA AQUI, porque não precisa ser variavel pra aparecer*/
+});
+
 Route::get('cliente/cadastrar', function(){
-    $nome = 'Luiz Carlos';
+    $nome = 'Dayana Natasha';
     $variavel = 'valor';
     /*return view('cadastrar',[
-        'nome' => 'Luiz Carlos',
+        'nome' => 'Dayana Natasha',
         'variavel' => 'valor1'
     ]);*/
     /*return view('cadastrar', compact('nome', 'variavel'));*/
