@@ -18,6 +18,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('controller/cliente/cadastrar', 'ClientsController@cadastrar');/**Posso colocar qualquer nome nos controllers? */
+Route::get('controller/cliente/cadastrar', 'ClientsController@cadastrar');
+Route::get('controller/cliente/cadastrar', 'ClientsController@cadastrar');
+Route::get('controller/cliente/cadastrar', 'ClientsController@cadastrar');
+
 Route::get('/for-if/{value}', function ($value){
     return view('for-if')
         ->with('value', $value)
