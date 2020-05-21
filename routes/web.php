@@ -24,6 +24,8 @@ Route::group(['prefix' => '/'], function(){
 
 Route::group(['prefix' => '/admin'], function(){
     Route::get('client', 'ClientsController@listar');
+    Route::get('client/form-cadastrar', 'ClientsController@formCadastrar');
+    Route::post('client/cadastrar', 'ClientsController@cadastrar');
     /*Route::group(['prefix' => '/cliente'], function(){
         Route::get('cadastrar', 'ClientsController@cadastrar');
     });*/
@@ -50,7 +52,7 @@ Route::get('/blade', function (){
     return view('test')
         ->with('nome', $nome)
         ->with('variavel', $variavel)
-        ->with('test', 'Tenho valor');/*DUVIDA AQUI, porque não precisa ser variavel pra aparecer*/
+        ->with('test', 'Tenho valor');
 });
 
 Route::get('cliente/cadastrar', function(){

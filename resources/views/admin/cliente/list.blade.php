@@ -2,6 +2,7 @@
     <head></head>
     <body>
         <h1>Listar clientes</h1>
+        <a href="/admin/client/form-cadastrar">Novo Cliente</a>
         <table>
             <thead>
                 <tr>
