@@ -17,6 +17,9 @@
                         <td>{{$client->id}}</td>
                         <td>{{$client->name}}</td>
                         <td>{{$client->email}}</td>
+                        <td>
+                            <a href="{{"/admin/client/{$client->id}/form-editar"}}">Editar</a>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
